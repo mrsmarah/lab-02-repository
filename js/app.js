@@ -1,3 +1,4 @@
+'use strict';
 $(document).ready(function() {
 
     function Img(img) {
@@ -18,34 +19,39 @@ $(document).ready(function() {
       $imgClone.find("img").attr("alt",this.title);
       $imgClone.find("p").text(this.description);
       $imgClone.find("p").attr("id","itemp");
+      $imgClone.removeAttr("id");
+      $imgClone.attr("class", this.keyword);
+      
       $("main").append($imgClone);
      
 
     };
     Img.prototype.menu = function(){
-        // console.log(this);
         if ($(`Option[value="${this.keyword}"]`).length == 0){
         $('select[name="dropdown"]').append(`<option value="${this.keyword}">${this.keyword} </option>`); 
-        // console.log(this);
         }
     };
     const renderMenu = () => {
-           $('select').change(function(){
-               $( "main section img" ).each(function() {        
-               
-                if ($(this).attr("class") === $("select").val()){
-                $("#itemimg ,#itemh2 ,#itemp").hide();
-                // $("#img-template").css("display","none");
-                console.log(this,'this1');
-                $("main").append(`<section><h2>${this.alt}</h2> <img src="${this.src}"/></section>`);
-                } 
 
-            })})
+           $('select').change(function(){
+               $( "main section " ).each(function() {        
+               
+                
+                if ($(this).attr("class") === $("select").val()){
+                    $(this).show();
+                    console.log($(this));}
+
+                if ($(this).attr("class") !== $("select").val()){
+                    $(this).hide();
+                    
+                    console.log($(this));}
+               
+               }
+               )
+            }
+           )
         };
 
-    const emptyRender = () => {
-        $("main").empty();
-    }
 
     const readJson = () => {
       $.ajax("data/page-1.json", { method: "GET", dataType: "JSON" }).then(data => {

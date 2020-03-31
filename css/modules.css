@@ -5,10 +5,12 @@ img{
     height: 200px;
     width: 200px;
     }
-section:first-of-type{
+/* section:first-of-type{
+    display: none;
+} */
+#img-template{
     display: none;
 }
-
 section{
 float: left;
 background-color: rgba(255, 228, 196, 0.322);
