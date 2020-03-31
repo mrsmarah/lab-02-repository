@@ -19,12 +19,15 @@ $(document).ready(function() {
       $imgClone.find("p").text(this.description);
       $imgClone.find("p").attr("id","itemp");
       $("main").append($imgClone);
+    //   $('option[value="default"]').hide();
+
     };
     Img.prototype.menu = function(){
         // console.log(this);
         if ($(`Option[value="${this.keyword}"]`).length == 0){
         $('select[name="dropdown"]').append(`<option value="${this.keyword}">${this.keyword} </option>`); 
         // console.log(this);
+       
         }
     };
     const renderMenu = () => {
@@ -34,7 +37,7 @@ $(document).ready(function() {
                 if ($(this).attr("class") === $("select").val()){
                 $("#itemimg ,#itemh2 ,#itemp").hide();
                 console.log(this,'this1');
-                $("main").append(`<h2>${this.alt}</h2> <img src="${this.src}"/>`);
+                $("main").append(`<section><h2>${this.alt}</h2> <img src="${this.src}"/></section>`);
                 } 
 
             })})
