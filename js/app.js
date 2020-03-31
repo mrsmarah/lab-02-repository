@@ -27,7 +27,6 @@ $(document).ready(function() {
         if ($(`Option[value="${this.keyword}"]`).length == 0){
         $('select[name="dropdown"]').append(`<option value="${this.keyword}">${this.keyword} </option>`); 
         // console.log(this);
-        $('option[value="default"]').css("background-color", "black");
         }
     };
     const renderMenu = () => {
@@ -36,6 +35,7 @@ $(document).ready(function() {
                
                 if ($(this).attr("class") === $("select").val()){
                 $("#itemimg ,#itemh2 ,#itemp").hide();
+                $("#itemimg ,#itemh2 ,#itemp").css("background-color","blue");
                 console.log(this,'this1');
                 $("main").append(`<section><h2>${this.alt}</h2> <img src="${this.src}"/></section>`);
                 } 
