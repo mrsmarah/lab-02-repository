@@ -35,7 +35,7 @@ $(document).ready(function() {
                
                 if ($(this).attr("class") === $("select").val()){
                 $("#itemimg ,#itemh2 ,#itemp").hide();
-                $("#itemimg ,#itemh2 ,#itemp").css("background-color","blue");
+                // $("#img-template").css("display","none");
                 console.log(this,'this1');
                 $("main").append(`<section><h2>${this.alt}</h2> <img src="${this.src}"/></section>`);
                 } 
