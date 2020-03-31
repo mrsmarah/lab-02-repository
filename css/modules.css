@@ -5,7 +5,9 @@ img{
     height: 200px;
     width: 200px;
     }
-
+section:first-of-type{
+    display: none;
+}
 
 section{
 float: left;
