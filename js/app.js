@@ -19,7 +19,7 @@ $(document).ready(function() {
       $imgClone.find("p").text(this.description);
       $imgClone.find("p").attr("id","itemp");
       $("main").append($imgClone);
-    //   $('option[value="default"]').hide();
+     
 
     };
     Img.prototype.menu = function(){
@@ -27,7 +27,7 @@ $(document).ready(function() {
         if ($(`Option[value="${this.keyword}"]`).length == 0){
         $('select[name="dropdown"]').append(`<option value="${this.keyword}">${this.keyword} </option>`); 
         // console.log(this);
-       
+        $('option[value="default"]').css("background-color", "black");
         }
     };
     const renderMenu = () => {
